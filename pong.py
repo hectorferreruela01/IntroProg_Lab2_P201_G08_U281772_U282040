@@ -204,6 +204,15 @@ def read_int_in_range(prompt: str, low: int, high: int) -> int:
     """
     
     # TODO: put your code!!!!
+    while True:
+    try:
+      enter = int(input(prompt + ": "))
+      while enter < low or enter > high:
+        enter = int(input(prompt + ": "))
+      return enter
+
+    except ValueError:
+       print("Error: Has d'introduir un nombre enter vàlid.")
 
 def read_int_in_range_w_default(prompt: str, low: int, high: int, default_val: int) -> int:
     """ Advanced/alternate more user-friendly version of read_int_in_range().
@@ -270,6 +279,21 @@ def ask_yes_no(prompt: str) -> bool:
     - Return only after receiving a valid input; do not stop the program with errors.
     """
     # TODO: put your code!!!!
+    
+    resposta = input(prompt + " (y/n): ")
+    resposta_esp = resposta.strip()
+    resposta_minus = resposta_esp.lower()
+
+    while resposta_minus not in  ("y", "n", "yes", "no"):
+        resposta = input(prompt + " (y/n): ")
+        resposta_esp = resposta.strip()
+        resposta_minus = resposta_esp.lower()
+
+    if resposta_minus in ("y", "yes"):
+        return True
+    elif resposta_minus in ("n", "no"):
+        return False
+
 
 # ================================
 # Functions to complete: main game
