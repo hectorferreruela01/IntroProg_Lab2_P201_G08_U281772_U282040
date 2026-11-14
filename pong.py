@@ -182,6 +182,11 @@ def read_color(prompt: str) -> tuple[int, int, int]:
     # TODO: put your code!!!!
     # return r, g, b
 
+    red = read_int_in_range(str(prompt) + ": Introdueix un numero entre 0 i 225 per al color Vermell: ", 0 , 255)
+    green = read_int_in_range(str(prompt) + ": Introdueix un numero entre 0 i 225 per al color Verd: ", 0 , 255)
+    blue = read_int_in_range(str(prompt) + ": Introdueix un numero entre 0 i 225 per al color Blau: ", 0 , 255)
+    return red,green,blue
+
 def read_int_in_range(prompt: str, low: int, high: int) -> int:
     """Ask user for an integer within [low, high]. 
     Keeps asking until a valid value is entered.
@@ -204,6 +209,7 @@ def read_int_in_range(prompt: str, low: int, high: int) -> int:
     """
     
     # TODO: put your code!!!!
+    
     while True:
     try:
       enter = int(input(prompt + ": "))
